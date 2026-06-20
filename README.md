@@ -23,7 +23,10 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 **Summary:** A tribute to Stardew Valley with digital time, date and weekday, current weather and temperature, sunrise/sunset progress, steps and progress indicator, heart rate, battery level, Bluetooth status, and Always-on Display support.
 
-**What's Modified:** Reworked the sunrise/sunset pointer to match the adapted background's 06:00-02:00 sky cycle, avoiding the stock behavior that entered the night state before sunset and snapped back to 180 degrees after sunset. Tapping the date now opens the system calendar.
+**What's Modified:**
+
+- Reworked the sunrise/sunset pointer to match the adapted background's `06:00`-`02:00` sky cycle, so the sun icon now follows a custom `210`->`300` daytime arc, moves from `300`->`360` after sunset until `02:00`, then re-enters from `180`->`210` before sunrise. avoiding the stock behavior that entered the night state before sunset and snapped back to `180` degrees after sunset. 
+- Tapping the date now opens the system calendar.
 
 ## Credits & Disclaimer
 
