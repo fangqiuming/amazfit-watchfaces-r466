@@ -28,6 +28,20 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 - Reworked the sunrise/sunset pointer to match the adapted background's `06:00`-`02:00` sky cycle, so the sun icon now follows a custom `210`->`300` daytime arc, moves from `300`->`360` after sunset until `02:00`, then re-enters from `180`->`210` before sunrise. avoiding the stock behavior that entered the night state before sunset and snapped back to `180` degrees after sunset. 
 - Tapping the date now opens the system calendar.
 
+### 2. Planetary Universe
+
+![Planetary Universe](planetary-universe/preview.png)
+
+* **Author**: `zepp`
+* **Version**: `1.0.1`
+* **App ID**: `1091567`
+* **Source**: Official Zepp store package
+* **Repository Path**: [`planetary-universe/1091567`](planetary-universe/1091567)
+
+**Summary:** A sci-fi themed digital watchface with time and seconds, weather conditions and temperature range, UV index, sunrise and sunset times, steps and distance, heart rate, calories, battery level, date and weekday, plus Always-on Display support.
+
+**What's Modified:** None yet. This repository currently stores the official package without changes.
+
 ## Credits & Disclaimer
 
 Some watchfaces in this repository are ported, translated, imported, or modified based on the works of other designers.
