@@ -1,4 +1,4 @@
-A collection of custom and modified watchfaces with **466x466 resolution** for modern Amazfit smartwatches (Zepp OS).
+A collection of imported, custom, and modified watchfaces with **466x466 resolution** for modern Amazfit smartwatches (Zepp OS).
 
 ## Compatibility
 These watchfaces are designed and optimized for 466x466 screens. They should be compatible with:
@@ -11,29 +11,23 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ## Available Watchfaces
 
-### 1. Classic Minimal
+### 1. Stardew Valley
 
-![Classic Minimal](https://placehold.co/233?text=466x466)
+![Stardew Valley](stardew-valley/preview.png)
 
-* **Version**: `v1.0.0`
-* **Last Updated**: 2026-06
-* **Download**: [Download (Releases)](https://github.com/fangqiuming/amazfit-watchfaces-r466/releases)
+* **Author**: `max.marauder`
+* **Version**: `1.0.6`
+* **App ID**: `1089671`
+* **Source**: Official Zepp store package
+* **Repository Path**: [`stardew-valley/1089671`](stardew-valley/1089671)
 
-**What's Modified:**
+**Summary:** A tribute to Stardew Valley with digital time, date and weekday, current weather and temperature, sunrise/sunset progress, steps and progress indicator, heart rate, battery level, Bluetooth status, and Always-on Display support.
 
-### 2. Sporty Analog
-
-![Sporty Analog](https://placehold.co/233/orange/black?text=466x466)
-
-* **Version**: `v1.1.0`
-* **Last Updated**: 2026-06
-* **Download**: [Download (Releases)](https://github.com/fangqiuming/amazfit-watchfaces-r466/releases)
-
-**What's Modified:**
+**What's Modified:** None yet. This repository currently stores the official package without changes.
 
 ## Credits & Disclaimer
 
-Some watchfaces in this repository are ported, translated, or modified based on the works of other designers.
+Some watchfaces in this repository are ported, translated, imported, or modified based on the works of other designers.
 
 - All original design copyrights belong to their respective creators.
 - Modifications (such as resolution scaling to 466x466, localizations, or code optimizations) are made under non-commercial open-source guidelines.
