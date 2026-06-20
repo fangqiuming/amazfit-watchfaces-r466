@@ -3,7 +3,7 @@ A collection of imported, custom, and modified watchfaces with **466x466 resolut
 ## Compatibility
 These watchfaces are designed and optimized for 466x466 screens. They should be compatible with:
 
-- Amazfit GTR 4 / GTR 4 Limited Edition
+- Amazfit GTR 4
 - Amazfit Active 2 (Round)
 - Amazfit Active 3
 - Amazfit T-Rex 3 Pro (44mm)
@@ -16,14 +16,14 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 ![Stardew Valley](stardew-valley/preview.png)
 
 * **Author**: `max.marauder`
-* **Version**: `1.0.6`
+* **Version**: `1.0.6+r1`
 * **App ID**: `1089671`
 * **Source**: Official Zepp store package
 * **Repository Path**: [`stardew-valley/1089671`](stardew-valley/1089671)
 
 **Summary:** A tribute to Stardew Valley with digital time, date and weekday, current weather and temperature, sunrise/sunset progress, steps and progress indicator, heart rate, battery level, Bluetooth status, and Always-on Display support.
 
-**What's Modified:** None yet. This repository currently stores the official package without changes.
+**What's Modified:** Reworked the sunrise/sunset pointer to match the adapted background's 06:00-02:00 sky cycle, avoiding the stock behavior that entered the night state before sunset and snapped back to 180 degrees after sunset. Tapping the date now opens the system calendar.
 
 ## Credits & Disclaimer
 

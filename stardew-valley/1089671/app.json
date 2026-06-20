@@ -1,1 +1,137 @@
-{"configVersion":"v2","app":{"appIdType":0,"appId":1089671,"appName":"Stardew Valley","appType":"watchface","version":{"code":7,"name":"1.0.6"},"vender":"zepp","description":"","icon":"1.png","cover":["1.png"],"extraInfo":{"madeBy":1,"fromZoom":false}},"permissions":[],"runtime":{"apiVersion":{"compatible":"1.0.0","target":"1.0.1","minVersion":"1.0"}},"i18n":{"en-US":{"icon":"1.png","appName":"Stardew Valley"}},"defaultLanguage":"en-US","debug":false,"module":{"watchface":{"path":"watchface/default-target/index","main":1,"editable":0,"lockscreen":1,"hightCost":0}},"platforms":[{"name":"Amazfit Active 2 NFC (Round)","deviceSource":8913152},{"name":"Amazfit Active 2 NFC (Round)","deviceSource":8913153},{"name":"Amazfit Active 2 (Round)","deviceSource":8913155},{"name":"Amazfit Active 2 (Round)","deviceSource":8913159},{"name":"Amazfit Active 2 NFC (Round)","deviceSource":10092800},{"name":"Amazfit Active 2 NFC (Round)","deviceSource":10092801},{"name":"Amazfit Active 2 (Round)","deviceSource":10092803},{"name":"Amazfit Active 2 (Round)","deviceSource":10092807}],"designWidth":466,"watchfacePreview":{"icon":"1.png","size":[]},"packageInfo":{"mode":"production","timeStamp":1756140704,"expiredTime":172800,"zpm":"3.2.14-beta"}}
+{
+  "configVersion": "v2",
+  "app": {
+    "appId": 1089671,
+    "appName": "Stardew Valley",
+    "appType": "watchface",
+    "version": {
+      "code": 7001,
+      "name": "1.0.6+r1"
+    },
+    "vender": "zepp",
+    "icon": "1.png",
+    "cover": [
+      "1.png"
+    ],
+    "description": ""
+  },
+  "runtime": {
+    "apiVersion": {
+      "compatible": "1.0.0",
+      "target": "1.0.1",
+      "minVersion": "1.0.0"
+    },
+    "type": "0"
+  },
+  "permissions": [],
+  "targets": {
+    "466x466": {
+      "module": {
+        "watchface": {
+          "path": "watchface/index",
+          "main": 1,
+          "editable": 0,
+          "lockscreen": 1,
+          "hightCost": 0
+        }
+      },
+      "platforms": [
+        {
+          "name": "FlorenceW",
+          "deviceSource": 7864577
+        },
+        {
+          "name": "Berlin",
+          "deviceSource": 7930112
+        },
+        {
+          "name": "BerlinW",
+          "deviceSource": 7930113
+        },
+        {
+          "name": "Milan",
+          "deviceSource": 8913152
+        },
+        {
+          "name": "MilanWNFC",
+          "deviceSource": 8913153
+        },
+        {
+          "name": "Milan64",
+          "deviceSource": 10092800
+        },
+        {
+          "name": "MilanWNFC64",
+          "deviceSource": 10092801
+        },
+        {
+          "name": "MilanW",
+          "deviceSource": 8913155
+        },
+        {
+          "name": "MilanWNA",
+          "deviceSource": 8913159
+        },
+        {
+          "name": "MilanW64",
+          "deviceSource": 10092803
+        },
+        {
+          "name": "MilanWNA64",
+          "deviceSource": 10092807
+        },
+        {
+          "name": "MilanWGolf",
+          "deviceSource": 10617091
+        },
+        {
+          "name": "Rimo",
+          "deviceSource": 10682624
+        },
+        {
+          "name": "RimoWN",
+          "deviceSource": 10682625
+        },
+        {
+          "name": "RimoW",
+          "deviceSource": 10682627
+        },
+        {
+          "name": "Cologne",
+          "deviceSource": 10944768
+        },
+        {
+          "name": "CologneWN",
+          "deviceSource": 10944769
+        },
+        {
+          "name": "CologneW",
+          "deviceSource": 10944771
+        },
+        {
+          "name": "CologneSW",
+          "deviceSource": 10948867
+        },
+        {
+          "name": "Windermere",
+          "deviceSource": 11010304
+        },
+        {
+          "name": "WindermereWN",
+          "deviceSource": 11010305
+        },
+        {
+          "name": "WindermereW",
+          "deviceSource": 11010307
+        }
+      ],
+      "designWidth": 466
+    }
+  },
+  "i18n": {
+    "en-US": {
+      "appName": "Stardew Valley"
+    }
+  },
+  "defaultLanguage": "en-US"
+}

@@ -11,7 +11,7 @@ try {
             lang: new DeviceRuntimeCore.HmUtils.Lang(DeviceRuntimeCore.HmUtils.getLanguage()),
             px: DeviceRuntimeCore.HmUtils.getPx(466)
         };
-        const {px} = __$$app$$__.__globals__;
+        const { px } = __$$app$$__.__globals__;
         const languageTable = {};
         __$$app$$__.__globals__.gettext = DeviceRuntimeCore.HmUtils.gettextFactory(languageTable, __$$app$$__.__globals__.lang, 'en-US');
         function getGlobal() {

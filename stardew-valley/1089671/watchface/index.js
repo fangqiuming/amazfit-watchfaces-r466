@@ -9,7 +9,7 @@ try {
         }
         const __$$module$$__ = __$$app$$__.current;
         const h = new DeviceRuntimeCore.WidgetFactory(new DeviceRuntimeCore.HmDomApi(__$$app$$__, __$$module$$__));
-        const {px} = __$$app$$__.__globals__;
+        const { px } = __$$app$$__.__globals__;
         const logger = Logger.getLogger('watchface');
         __$$module$$__.module = DeviceRuntimeCore.WatchFace({
             init_view() {
@@ -311,19 +311,39 @@ try {
                     enable: false,
                     show_level: hmUI.show_level.ONLY_NORMAL
                 });
-                hmUI.createWidget(hmUI.widget.IMG_POINTER, {
-                    src: '116.png',
+                this.weatherSensor = null;
+                if (typeof hmSensor !== 'undefined') {
+                    try {
+                        this.weatherSensor = hmSensor.createSensor(hmSensor.id.WEATHER);
+                    } catch (e) {
+                        this.weatherSensor = null;
+                    }
+                }
+                this.sunPointer = hmUI.createWidget(hmUI.widget.IMG, {
+                    x: 0,
+                    y: 0,
+                    w: 466,
+                    h: 466,
+                    pos_x: 113,
+                    pos_y: 130,
                     center_x: 130,
                     center_y: 217,
-                    x: 17,
-                    y: 87,
-                    type: hmUI.data_type.SUN_CURRENT,
-                    start_angle: 180,
-                    end_angle: 360,
-                    cover_x: 0,
-                    cover_y: 0,
+                    src: '116.png',
+                    angle: 360,
                     show_level: hmUI.show_level.ONLY_NORMAL
                 });
+                this.updateSunPointer();
+                this.timeSensor = null;
+                this.timeListener = null;
+                if (typeof hmSensor !== 'undefined') {
+                    try {
+                        this.timeSensor = hmSensor.createSensor(hmSensor.id.TIME);
+                        this.timeListener = () => {
+                            this.updateSunPointer();
+                        };
+                        this.timeSensor.addEventListener(this.timeSensor.event.MINUTEEND, this.timeListener);
+                    } catch (err) { }
+                }
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 173,
                     y: 69,
@@ -430,6 +450,78 @@ try {
                     type: hmUI.data_type.BATTERY,
                     show_level: hmUI.show_level.ONLY_NORMAL
                 });
+                hmUI.createWidget(hmUI.widget.WIDGET_DELEGATE, {
+                    resume_call: () => {
+                        this.updateSunPointer();
+                    }
+                });
+                const dateClick = hmUI.createWidget(hmUI.widget.IMG, {
+                    x: 146,
+                    y: 120,
+                    w: 276,
+                    h: 70,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                });
+                dateClick.addEventListener(hmUI.event.CLICK_UP, () => {
+                    try {
+                        hmApp.startApp({
+                            url: 'ScheduleCalScreen',
+                            native: true
+                        });
+                    } catch (e) {
+                        console.log('Jump to Calendar failed', e);
+                    }
+                });
+            },
+            updateSunPointer() {
+                if (!this.sunPointer) return;
+                const now = new Date();
+                const currentHour = now.getHours() + now.getMinutes() / 60;
+                let sunriseHour = 6.0;
+                let sunsetHour = 18.0;
+                if (this.weatherSensor) {
+                    try {
+                        const forecast = this.weatherSensor.getForecastWeather();
+                        if (forecast && forecast.tideData && forecast.tideData.data && forecast.tideData.data[0]) {
+                            const tide = forecast.tideData.data[0];
+                            const sunR = tide.sunrise;
+                            const sunS = tide.sunset;
+                            if (sunR && sunS) {
+                                if (sunR.hour === 0 && sunR.minute === 0 && sunS.hour === 0 && sunS.minute === 0) {
+                                    sunriseHour = 0.0;
+                                    sunsetHour = 24.0;
+                                } else {
+                                    sunriseHour = sunR.hour + sunR.minute / 60;
+                                    sunsetHour = sunS.hour + sunS.minute / 60;
+                                }
+                            }
+                        }
+                    } catch (err) {
+                        sunriseHour = 6.0;
+                        sunsetHour = 18.0;
+                    }
+                }
+                let angle = 360;
+                if (currentHour >= sunriseHour && currentHour < sunsetHour) {
+                    const progress = (currentHour - sunriseHour) / (sunsetHour - sunriseHour);
+                    angle = 210 + progress * 90;
+                } else {
+                    const dawnStart = Math.max(2.0, sunriseHour - 2.0);
+                    const adjustedHour = currentHour < 2.0 ? currentHour + 24.0 : currentHour;
+                    if (adjustedHour >= sunsetHour) {
+                        const totalEveningDuration = (24.0 - sunsetHour) + 2.0;
+                        const elapsed = adjustedHour - sunsetHour;
+                        const progress = elapsed / totalEveningDuration;
+                        angle = 300 + progress * 60;
+                        if (angle > 360) angle = 360;
+                    } else if (currentHour < dawnStart) {
+                        angle = 360;
+                    } else {
+                        const progress = (currentHour - dawnStart) / (sunriseHour - dawnStart);
+                        angle = 180 + progress * 30;
+                    }
+                }
+                this.sunPointer.setProperty(hmUI.prop.ANGLE, Math.round(angle));
             },
             onInit() {
                 logger.log('index page.js on init invoke');
@@ -440,6 +532,11 @@ try {
             },
             onDestroy() {
                 logger.log('index page.js on destroy invoke');
+                if (this.timeSensor && this.timeListener) {
+                    try {
+                        this.timeSensor.removeEventListener(this.timeSensor.event.MINUTEEND, this.timeListener);
+                    } catch (e) { }
+                }
             }
         });
         ;
