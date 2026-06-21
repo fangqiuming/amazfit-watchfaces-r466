@@ -67,12 +67,14 @@ function printHelp() {
   ./watchface preview [--watchface <name-or-slug>]
   ./watchface bump [--watchface <name-or-slug>]
   ./watchface bump [--watchface <name-or-slug>] --upstream-name <name> --upstream-code <code>
+  ./watchface sync-readme [--watchface <name-or-slug> | --all]
   ./watchface release [--watchface <name-or-slug> | --all]
 
 Commands:
   list       Show all discovered watchfaces.
   preview    Run "zeus preview" in the selected watchface package.
   bump       Update app.json, release notes, and README for the next release version.
+  sync-readme Refresh README sections from release-notes.json.
   release    Create GitHub-ready zip artifacts from the selected watchface package.
 
 Options:
@@ -539,6 +541,14 @@ function renderReadmeVersionHistory(releases) {
   return lines;
 }
 
+function trimTrailingBlankLines(lines) {
+  const trimmed = [...lines];
+  while (trimmed.length > 0 && trimmed[trimmed.length - 1] === '') {
+    trimmed.pop();
+  }
+  return trimmed;
+}
+
 function syncReadmeForWatchface(watchface) {
   const readmeLines = fs.readFileSync(README_PATH, 'utf8').split('\n');
   const repoPath = path.relative(REPO_ROOT, watchface.packageDir).replace(/\\/g, '/');
@@ -584,17 +594,21 @@ function syncReadmeForWatchface(watchface) {
   const releaseNotes = getReleaseNotesData(watchface);
   const versionHistoryLines = renderReadmeVersionHistory(releaseNotes.releases);
   const rebuiltSection = [
-    ...sectionLines.slice(0, modifiedLineIndex),
-    ...versionHistoryLines
+    ...trimTrailingBlankLines(sectionLines.slice(0, modifiedLineIndex)),
+    '',
+    ...versionHistoryLines,
+    ''
   ];
 
-  const rebuiltReadme = [
+  const rebuiltReadmeLines = [
     ...readmeLines.slice(0, sectionStartIndex),
     ...rebuiltSection,
     ...readmeLines.slice(sectionEndIndex)
-  ].join('\n');
+  ];
 
-  fs.writeFileSync(README_PATH, `${rebuiltReadme}\n`);
+  const rebuiltReadme = `${trimTrailingBlankLines(rebuiltReadmeLines).join('\n')}\n`;
+
+  fs.writeFileSync(README_PATH, rebuiltReadme);
 }
 
 function collectPackageFiles(packageDir) {
@@ -744,6 +758,15 @@ async function runBump(watchface, options = {}) {
   console.log(`- Run ./watchface release --watchface ${watchface.slug} when the release notes are ready.`);
 }
 
+async function runSyncReadme(watchfaces) {
+  for (const watchface of watchfaces) {
+    syncReadmeForWatchface(watchface);
+    console.log(`Synced README for ${watchface.appName} (${watchface.slug}).`);
+  }
+
+  console.log(`README refreshed from release notes: ${README_PATH}`);
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
@@ -802,6 +825,16 @@ async function main() {
       all: args.all
     });
     await runRelease(selected);
+    return;
+  }
+
+  if (args.command === 'sync-readme') {
+    const selected = await chooseWatchfaces(watchfaces, {
+      selector: args.selector,
+      allowAll: true,
+      all: args.all
+    });
+    await runSyncReadme(selected);
     return;
   }
 

@@ -27,9 +27,9 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 #### `1.0.6-r1`
 
-- Reworked the sunrise and sunset pointer to match the adapted background's 06:00-02:00 sky cycle, replacing the stock behavior that entered the night state before sunset and snapped back after sunset.
-- The sun icon now follows a custom 210->300 daytime arc, moves from 300->360 after sunset until 02:00, then re-enters from 180->210 before sunrise.
-- Tapping the date now opens the system calendar.
+- Reworked the `sunrise and sunset` pointer to match the adapted background's `06:00`-`02:00` sky cycle, replacing the stock behavior that entered the night state before sunset and snapped back after sunset.
+- The `sunrise and sunset` pointer now follows a `210`->`300` daytime arc, moves from `300`->`360` after sunset until `02:00`, then re-enters from `180`->`210` before sunrise.
+- Tapping the `date` now opens the system calendar.
 
 ### 2. Planetary Universe
 
@@ -48,8 +48,8 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 #### `1.0.1-r1`
 
 - Added an `AQI` readout to the weather header so the number now matches the `AQI` label already present in the background.
-- Added tap targets for the weather, sunrise and sunset, heart rate, steps, calories, battery, and date sections.
-- Tapping the date now opens the system calendar.
+- Added tap targets for the `weather`, `sunrise and sunset`, `heart rate`, `steps`, `calories`, `battery`, and `date` sections.
+- Tapping the `date` now opens the system calendar.
 
 ## Local Tooling
 
