@@ -32,15 +32,18 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ![Planetary Universe](planetary-universe/preview.png)
 
-* **Author**: `zepp`
-* **Version**: `1.0.1`
+* **Author**: `zeppewf001`
+* **Version**: `1.0.1+r1`
 * **App ID**: `1091567`
 * **Source**: Official Zepp store package
 * **Repository Path**: [`planetary-universe/1091567`](planetary-universe/1091567)
 
 **Summary:** A sci-fi themed digital watchface with time and seconds, weather conditions and temperature range, UV index, sunrise and sunset times, steps and distance, heart rate, calories, battery level, date and weekday, plus Always-on Display support.
 
-**What's Modified:** None yet. This repository currently stores the official package without changes.
+**What's Modified:**
+
+- Added an `AQI` readout to the weather header so the number now matches the `AQI` label already present in the background.
+- Added tap targets for the weather, sunrise and sunset, heart rate, steps, calories, battery, and date sections, and tapping the date now opens the system calendar.
 
 ## Credits & Disclaimer
 

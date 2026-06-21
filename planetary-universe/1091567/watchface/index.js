@@ -9,7 +9,7 @@ try {
         }
         const __$$module$$__ = __$$app$$__.current;
         const h = new DeviceRuntimeCore.WidgetFactory(new DeviceRuntimeCore.HmDomApi(__$$app$$__, __$$module$$__));
-        const {px} = __$$app$$__.__globals__;
+        const { px } = __$$app$$__.__globals__;
         const logger = Logger.getLogger('watchface');
         __$$module$$__.module = DeviceRuntimeCore.WatchFace({
             init_view() {
@@ -20,7 +20,7 @@ try {
                     h: 466,
                     src: '2.png',
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Background
                 hmUI.createWidget(hmUI.widget.IMG_TIME, {
                     hour_zero: 1,
                     hour_startX: 107,
@@ -88,7 +88,7 @@ try {
                     pm_en_path: '27.png',
                     enable: false,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Time (Normal Mode)
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 194,
                     y: 33,
@@ -126,7 +126,7 @@ try {
                     image_length: 29,
                     type: hmUI.data_type.WEATHER_CURRENT,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Weather Icon
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 237,
                     y: 44,
@@ -153,7 +153,7 @@ try {
                     invalid_image: '67.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // Current Temperature
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 258,
                     y: 81,
@@ -180,7 +180,7 @@ try {
                     invalid_image: '70.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // High Temperature
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 185,
                     y: 81,
@@ -207,7 +207,31 @@ try {
                     invalid_image: '73.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // Low Temperature
+                hmUI.createWidget(hmUI.widget.TEXT_IMG, {
+                    x: 62,
+                    y: 81,
+                    w: 100,
+                    type: hmUI.data_type.AQI,
+                    font_array: [
+                        '57.png',
+                        '58.png',
+                        '59.png',
+                        '60.png',
+                        '61.png',
+                        '62.png',
+                        '63.png',
+                        '64.png',
+                        '65.png',
+                        '66.png'
+                    ],
+                    align_h: hmUI.align.CENTER_H,
+                    h_space: -1,
+                    show_level: hmUI.show_level.ONLY_NORMAL,
+                    invalid_image: '76.png',
+                    padding: false,
+                    isCharacter: false
+                }); // Air Quality Index (AQI)
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 338,
                     y: 81,
@@ -230,7 +254,7 @@ try {
                     invalid_image: '76.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // UV Index
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 28,
                     y: 202,
@@ -254,7 +278,7 @@ try {
                     invalid_image: '77.png',
                     padding: true,
                     isCharacter: false
-                });
+                }); // Sunrise Time
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 362,
                     y: 202,
@@ -278,7 +302,7 @@ try {
                     invalid_image: '79.png',
                     padding: true,
                     isCharacter: false
-                });
+                }); // Sunset Time
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 176,
                     y: 327,
@@ -293,7 +317,7 @@ try {
                     image_length: 6,
                     type: hmUI.data_type.STEP,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Step Progress Icon
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 195,
                     y: 304,
@@ -315,7 +339,7 @@ try {
                     show_level: hmUI.show_level.ONLY_NORMAL,
                     padding: false,
                     isCharacter: false
-                });
+                }); // Step Count
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 183,
                     y: 352,
@@ -344,7 +368,7 @@ try {
                     dot_image: '87.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // Distance
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 58,
                     y: 258,
@@ -363,7 +387,7 @@ try {
                     image_length: 10,
                     type: hmUI.data_type.HEART,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Heart Rate Icon
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 85,
                     y: 304,
@@ -386,7 +410,7 @@ try {
                     invalid_image: '100.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // Heart Rate
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 305,
                     y: 258,
@@ -405,7 +429,7 @@ try {
                     image_length: 10,
                     type: hmUI.data_type.CAL,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Calories Icon
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 326,
                     y: 304,
@@ -427,7 +451,7 @@ try {
                     show_level: hmUI.show_level.ONLY_NORMAL,
                     padding: false,
                     isCharacter: false
-                });
+                }); // Calories
                 hmUI.createWidget(hmUI.widget.IMG_LEVEL, {
                     x: 22,
                     y: 310,
@@ -446,7 +470,7 @@ try {
                     image_length: 10,
                     type: hmUI.data_type.BATTERY,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Battery Icon
                 hmUI.createWidget(hmUI.widget.TEXT_IMG, {
                     x: 200,
                     y: 424,
@@ -471,7 +495,7 @@ try {
                     unit_en: '121.png',
                     padding: false,
                     isCharacter: false
-                });
+                }); // Battery Percentage
                 hmUI.createWidget(hmUI.widget.IMG_DATE, {
                     month_startX: 93,
                     month_startY: 0,
@@ -539,7 +563,7 @@ try {
                     day_is_character: false,
                     enable: false,
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Date (Month and Day)
                 hmUI.createWidget(hmUI.widget.IMG_WEEK, {
                     x: 174,
                     y: 226,
@@ -553,7 +577,7 @@ try {
                         '140.png'
                     ],
                     show_level: hmUI.show_level.ONLY_NORMAL
-                });
+                }); // Weekday
                 hmUI.createWidget(hmUI.widget.IMG_TIME, {
                     hour_zero: 1,
                     hour_startX: 132,
@@ -595,9 +619,79 @@ try {
                     minute_follow: 0,
                     enable: false,
                     show_level: hmUI.show_level.ONLY_AOD
+                }); // Time (AOD Mode)
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 52,
+                    y: 30,
+                    w: 362,
+                    h: 80,
+                    type: hmUI.data_type.WEATHER_CURRENT,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Weather Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 20,
+                    y: 195,
+                    w: 80,
+                    h: 44,
+                    type: hmUI.data_type.SUN_CURRENT,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Sunrise/Sunset Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 355,
+                    y: 195,
+                    w: 80,
+                    h: 44,
+                    type: hmUI.data_type.SUN_CURRENT,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Sunrise/Sunset Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 50,
+                    y: 250,
+                    w: 90,
+                    h: 80,
+                    type: hmUI.data_type.HEART,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Heart Rate Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 165,
+                    y: 295,
+                    w: 120,
+                    h: 90,
+                    type: hmUI.data_type.STEP,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Step Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 295,
+                    y: 250,
+                    w: 90,
+                    h: 80,
+                    type: hmUI.data_type.CAL,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Calories Clickable
+                hmUI.createWidget(hmUI.widget.IMG_CLICK, {
+                    x: 175,
+                    y: 410,
+                    w: 110,
+                    h: 50,
+                    type: hmUI.data_type.BATTERY,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Battery Clickable
+                const dateClick = hmUI.createWidget(hmUI.widget.IMG, {
+                    x: 160,
+                    y: 215,
+                    w: 140,
+                    h: 50,
+                    show_level: hmUI.show_level.ONLY_NORMAL
+                }); // Date Clickable
+                dateClick.addEventListener(hmUI.event.CLICK_UP, () => {
+                    try {
+                        hmApp.startApp({
+                            url: 'ScheduleCalScreen',
+                            native: true
+                        });
+                    } catch (e) { }
                 });
-            },
-            onInit() {
+            }, onInit() {
                 logger.log('index page.js on init invoke');
             },
             build() {
