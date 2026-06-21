@@ -13,5 +13,6 @@ Thumbs.db
 dist/
 build/
 out/
+artifacts/
 
 *.log

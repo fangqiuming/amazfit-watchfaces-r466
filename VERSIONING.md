@@ -36,6 +36,13 @@ Do not bump the package version for repository-only changes, such as:
 - file renames outside the installable package
 - notes, screenshots, or documentation cleanup
 
+## Local Tooling
+
+Use the repository CLI to keep the package version, release notes, and README in sync:
+
+- `./watchface bump --watchface <slug>` increments the local revision.
+- `./watchface bump --watchface <slug> --upstream-name <name> --upstream-code <code>` starts a new upstream baseline at `-r1`.
+
 ## Example
 
 For the current `Stardew Valley` baseline:

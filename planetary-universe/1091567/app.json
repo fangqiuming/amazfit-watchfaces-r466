@@ -6,7 +6,7 @@
         "appType": "watchface",
         "version": {
             "code": 2001,
-            "name": "1.0.1+r1"
+            "name": "1.0.1-r1"
         },
         "vender": "zepp",
         "icon": "1.png",

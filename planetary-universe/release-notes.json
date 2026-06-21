@@ -1,0 +1,13 @@
+{
+  "summary": "A sci-fi themed digital watchface with time and seconds, weather conditions and temperature range, UV index, sunrise and sunset times, steps and distance, heart rate, calories, battery level, date and weekday, plus Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.1-r1",
+      "changes": [
+        "Added an `AQI` readout to the weather header so the number now matches the `AQI` label already present in the background.",
+        "Added tap targets for the `weather`, `sunrise and sunset`, `heart rate`, `steps`, `calories`, `battery`, and `date` sections.",
+        "Tapping the `date` now opens the system calendar."
+      ]
+    }
+  ]
+}

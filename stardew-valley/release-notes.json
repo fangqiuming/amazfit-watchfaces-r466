@@ -1,0 +1,13 @@
+{
+  "summary": "A tribute to Stardew Valley with digital time, date and weekday, current weather and temperature, sunrise and sunset progress, steps and progress indicator, heart rate, battery level, Bluetooth status, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.6-r1",
+      "changes": [
+        "Reworked the `sunrise and sunset` pointer to match the adapted background's `06:00`-`02:00` sky cycle, replacing the stock behavior that entered the night state before sunset and snapped back after sunset.",
+        "The `sunrise and sunset` pointer now follows a `210`->`300` daytime arc, moves from `300`->`360` after sunset until `02:00`, then re-enters from `180`->`210` before sunrise.",
+        "Tapping the `date` now opens the system calendar."
+      ]
+    }
+  ]
+}
