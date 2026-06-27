@@ -1,0 +1,11 @@
+{
+  "summary": "A CASIO F-91W inspired Active 2 digital watchface with a classic LCD-style layout, time, date, status indicators, shortcut artwork, PAI assets, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
