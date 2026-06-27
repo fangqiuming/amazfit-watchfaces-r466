@@ -1,0 +1,11 @@
+{
+  "summary": "An animated sigil-themed analog watchface with weekday, date, battery percentage, and Always-on Display support. The Zepp store flags it as higher power consumption.",
+  "releases": [
+    {
+      "version": "1.0.7",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
