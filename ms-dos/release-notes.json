@@ -1,0 +1,11 @@
+{
+  "summary": "An MS-DOS inspired terminal-style digital watchface with time, date, weather, battery, steps, and heart-rate data.",
+  "releases": [
+    {
+      "version": "1.0.4",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
