@@ -1,0 +1,11 @@
+{
+  "summary": "A retro 80s arcade-inspired digital watchface with grid-matrix numerals, time and date, steps, battery, and Bluetooth status.",
+  "releases": [
+    {
+      "version": "1.0.3",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
