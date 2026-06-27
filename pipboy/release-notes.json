@@ -1,0 +1,11 @@
+{
+  "summary": "A Pip-Boy inspired Active 2 digital watchface with an animated center display, time, date, calories, heart rate, distance, steps, battery, weather, temperature, and status indicators.",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
