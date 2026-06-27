@@ -1,0 +1,11 @@
+{
+  "summary": "A monochrome minimal analog watchface with fixed battery, heart-rate, steps, and calories complications, tappable shortcut zones, status icons, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.3",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
