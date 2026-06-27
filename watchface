@@ -11,6 +11,10 @@ const ARTIFACTS_ROOT = path.join(REPO_ROOT, 'artifacts', 'releases');
 const PACKAGE_DIR_PATTERN = /^\d+$/;
 const IGNORED_ENTRY_NAMES = new Set(['.DS_Store', 'Thumbs.db']);
 
+function stripByteOrderMark(source) {
+  return source.charCodeAt(0) === 0xfeff ? source.slice(1) : source;
+}
+
 function discoverWatchfaces() {
   const topLevelEntries = fs.readdirSync(REPO_ROOT, { withFileTypes: true });
   const watchfaces = [];
@@ -39,7 +43,7 @@ function discoverWatchfaces() {
         continue;
       }
 
-      const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+      const appJson = JSON.parse(stripByteOrderMark(fs.readFileSync(appJsonPath, 'utf8')));
       const app = appJson.app || {};
       const version = app.version || {};
 
@@ -322,7 +326,8 @@ function createTimestamp() {
 }
 
 function getReleaseBaseName(watchface) {
-  return [watchface.appId, sanitizeFileName(watchface.appName), watchface.versionName].join('-');
+  const safeAppName = sanitizeFileName(watchface.appName) || sanitizeFileName(watchface.slug) || watchface.appId;
+  return [watchface.appId, safeAppName, watchface.versionName].join('-');
 }
 
 function getReleaseOutputDir(watchface) {
@@ -342,7 +347,7 @@ function getReleaseNotesPath(watchface) {
 }
 
 function readJsonFile(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return JSON.parse(stripByteOrderMark(fs.readFileSync(filePath, 'utf8')));
 }
 
 function detectJsonIndent(source) {
@@ -455,10 +460,6 @@ function createGitTagCommands(watchface) {
 }
 
 function getNextVersion(watchface, options = {}) {
-  ensureValidRevision(watchface);
-
-  const current = parseVersionName(watchface.versionName);
-  const currentUpstreamCode = Math.floor(watchface.versionCode / 1000);
   const wantsNewUpstream = options.upstreamName !== null || options.upstreamCode !== null;
 
   if (wantsNewUpstream) {
@@ -474,6 +475,20 @@ function getNextVersion(watchface, options = {}) {
     };
   }
 
+  const baselineMatch = String(watchface.versionName).match(/-r\d+$/);
+  if (!baselineMatch) {
+    const upstreamCode = parsePositiveInteger(watchface.versionCode, `${watchface.appJsonPath} version.code`);
+    return {
+      versionName: `${watchface.versionName}-r1`,
+      versionCode: upstreamCode * 1000 + 1,
+      mode: 'baseline_import'
+    };
+  }
+
+  ensureValidRevision(watchface);
+
+  const current = parseVersionName(watchface.versionName);
+  const currentUpstreamCode = Math.floor(watchface.versionCode / 1000);
   const nextRevision = current.revision + 1;
   return {
     versionName: `${current.upstreamName}-r${nextRevision}`,
@@ -485,7 +500,7 @@ function getNextVersion(watchface, options = {}) {
 function updateAppJsonVersion(watchface, versionInfo) {
   const source = fs.readFileSync(watchface.appJsonPath, 'utf8');
   const indent = detectJsonIndent(source);
-  const appJson = JSON.parse(source);
+  const appJson = JSON.parse(stripByteOrderMark(source));
 
   appJson.app = appJson.app || {};
   appJson.app.version = appJson.app.version || {};
@@ -738,6 +753,12 @@ async function runRelease(watchfaces) {
 async function runBump(watchface, options = {}) {
   const previousVersion = watchface.versionName;
   const nextVersion = getNextVersion(watchface, options);
+  const modeLabel =
+    nextVersion.mode === 'new_upstream'
+      ? 'new upstream baseline'
+      : nextVersion.mode === 'baseline_import'
+        ? 'first local revision from imported upstream baseline'
+        : 'next local revision';
 
   updateAppJsonVersion(watchface, nextVersion);
   const releaseNotesPath = addReleaseNotesEntry(watchface, nextVersion.versionName);
@@ -747,7 +768,7 @@ async function runBump(watchface, options = {}) {
   console.log(`- previous: ${previousVersion}`);
   console.log(`- current: ${nextVersion.versionName}`);
   console.log(`- code: ${nextVersion.versionCode}`);
-  console.log(`- mode: ${nextVersion.mode === 'new_upstream' ? 'new upstream baseline' : 'next local revision'}`);
+  console.log(`- mode: ${modeLabel}`);
   console.log(`- app.json: ${watchface.appJsonPath}`);
   console.log(`- release notes: ${releaseNotesPath}`);
   console.log(`- readme: ${README_PATH}`);

@@ -14,5 +14,6 @@ dist/
 build/
 out/
 artifacts/
+import/
 
 *.log
