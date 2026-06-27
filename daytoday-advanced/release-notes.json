@@ -1,0 +1,11 @@
+{
+  "summary": "A layered analog and digital dashboard watchface with central time, weekday and date, steps, calories, heart rate, battery level, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.3",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
