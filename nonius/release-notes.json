@@ -1,0 +1,11 @@
+{
+  "summary": "A minimalist analog scale watchface that magnifies the current portion of the dial, with editable top and bottom data slots for items such as time, steps, weather, and battery.",
+  "releases": [
+    {
+      "version": "1.2.0",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
