@@ -1,0 +1,11 @@
+{
+  "summary": "A data-rich concentric watchface with progress bars for steps, heart rate, and battery, plus sleep time or sunrise and sunset information and Always-on Display support.",
+  "releases": [
+    {
+      "version": "3.0.0",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
