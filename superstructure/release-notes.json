@@ -1,0 +1,11 @@
+{
+  "summary": "A layered industrial dashboard watchface with metallic textures, combining analog hands with digital time, weather, sunset, steps, distance, calories, heart rate, battery, and Bluetooth status.",
+  "releases": [
+    {
+      "version": "1.0.2",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
