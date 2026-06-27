@@ -1,0 +1,11 @@
+{
+  "summary": "A Portal-inspired test chamber watchface with digital time and date, an animated battery indicator, weather, step count, heart rate, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "Imported the official Zepp store package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
