@@ -1,0 +1,11 @@
+{
+  "summary": "A White Art analog and digital watchface port with time, date, weekday, battery level, analog hands, tap zones for time and date, and Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}
