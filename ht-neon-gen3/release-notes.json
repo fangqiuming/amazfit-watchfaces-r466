@@ -1,0 +1,11 @@
+{
+  "summary": "A neon fisheye-style Active 2 digital watchface with time, date, weather, temperature, steps, distance, calories, heart rate, battery, shortcuts, and full Always-on Display support.",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "changes": [
+        "Imported the community package into the repository as an unmodified upstream baseline."
+      ]
+    }
+  ]
+}

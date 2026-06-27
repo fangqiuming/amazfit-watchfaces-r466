@@ -1,0 +1,91 @@
+﻿{
+  "configVersion": "v2",
+  "app": {
+    "appIdType": 0,
+    "appId": 959038,
+    "appName": "HT T3 063 Neon Gen3_Custom_466_GTR_4_Active_2",
+    "appType": "watchface",
+    "version": {
+      "code": 2,
+      "name": "1.0.1"
+    },
+    "vender": "zepp",
+    "description": "",
+    "icon": "Preview.png",
+    "cover": [
+      "Preview.png"
+    ],
+    "extraInfo": {
+      "madeBy": 1,
+      "fromZoom": false
+    }
+  },
+  "permissions": [
+    "gps"
+  ],
+  "runtime": {
+    "apiVersion": {
+      "compatible": "1.0.0",
+      "target": "1.0.1",
+      "minVersion": "1.0.0"
+    }
+  },
+  "i18n": {
+    "enUS": {
+      "icon": "Preview.png",
+      "appName": "HT T3 063 Neon Gen3_Custom_466_GTR_4_Active_2"
+    }
+  },
+  "defaultLanguage": "en-US",
+  "debug": false,
+  "module": {
+    "watchface": {
+      "path": "watchface/index",
+      "main": 1,
+      "editable": 0,
+      "lockscreen": 1,
+      "hightCost": 0
+    }
+  },
+  "platforms": [
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 8913152
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 8913153
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 8913155
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 8913159
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 10092800
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 10092801
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 10092803
+    },
+    {
+      "name": "Amazfit Active 2",
+      "deviceSource": 10092807
+    }
+  ],
+  "designWidth": 466,
+  "packageInfo": {
+    "mode": "production",
+    "timeStamp": 1671657100,
+    "expiredTime": 172800,
+    "zpm": "2.8.2"
+  }
+}
