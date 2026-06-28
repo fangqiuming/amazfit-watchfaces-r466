@@ -2,6 +2,14 @@
   "summary": "A CASIO F-91W inspired Active 2 digital watchface with a classic LCD-style layout, time, date, status indicators, shortcut artwork, PAI assets, and Always-on Display support.",
   "releases": [
     {
+      "version": "1.0.1-r1",
+      "changes": [
+        "Restored the iconic blue outer ring of the Casio F-91W to the watch face border.",
+        "Removed the non-functional `DISTURB` icon and the redundant symmetrical `DISCONNECT` icon from the bottom section for a cleaner, more authentic look.",
+        "Refined the background by unifying the previous overlapping dark blue and black patches into a solid black backdrop, eliminating uneven color fragments under high brightness."
+      ]
+    },
+    {
       "version": "1.0.1",
       "changes": [
         "Imported the community package into the repository as an unmodified upstream baseline."

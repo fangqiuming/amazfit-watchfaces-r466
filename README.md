@@ -211,15 +211,21 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ### 13. CASIO F-91W
 
-![CASIO F-91W](casio-f-91w/preview.png)
+![CASIO F-91W Original](casio-f-91w/Original.png) 　 ![CASIO F-91W Updated](casio-f-91w/preview.png) 
 
-* **Author**: `Eliasf`
-* **Version**: `1.0.1`
+* **Authors**: `jcmgennesis` (Original) -> `Kulon-24` -> `eliasf` -> `Baranaked` -> `Postmortem`
+* **Version**: `1.0.1-r1`
 * **App ID**: `8242388`
 * **Source**: [`active/view/2268`](https://amazfitwatchfaces.com/active/view/2268)
 * **Repository Path**: [`casio-f-91w/8242388`](casio-f-91w/8242388)
 
 **What's Modified by Version:**
+
+#### `1.0.1-r1`
+
+- Restored the iconic blue outer ring of the Casio F-91W to the watch face border.
+- Removed the non-functional `DISTURB` icon and the redundant symmetrical `DISCONNECT` icon from the bottom section for a cleaner, more authentic look.
+- Refined the background by unifying the previous overlapping dark blue and black patches into a solid black backdrop, eliminating uneven color fragments under high brightness.
 
 #### `1.0.1`
 
