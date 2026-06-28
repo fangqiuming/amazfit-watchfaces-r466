@@ -13,7 +13,7 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ### 1. Stardew Valley
 
-![Stardew Valley](stardew-valley/preview.png)
+![Stardew Valley Original](stardew-valley/original.png) 　 ![Stardew Valley Updated](stardew-valley/preview.png) 
 
 * **Author**: `max.marauder`
 * **Version**: `1.0.6-r1`
@@ -31,7 +31,7 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ### 2. Planetary Universe
 
-![Planetary Universe](planetary-universe/preview.png)
+![Planetary Universe Original](planetary-universe/original.png) 　 ![Planetary Universe Updated](planetary-universe/preview.png) 
 
 * **Author**: `zeppewf001`
 * **Version**: `1.0.1-r1`
@@ -211,7 +211,7 @@ These watchfaces are designed and optimized for 466x466 screens. They should be 
 
 ### 13. CASIO F-91W
 
-![CASIO F-91W Original](casio-f-91w/Original.png) 　 ![CASIO F-91W Updated](casio-f-91w/preview.png) 
+![CASIO F-91W Original](casio-f-91w/original.png) 　 ![CASIO F-91W Updated](casio-f-91w/preview.png) 
 
 * **Authors**: `jcmgennesis` (Original) -> `Kulon-24` -> `eliasf` -> `Baranaked` -> `Postmortem`
 * **Version**: `1.0.1-r1`
